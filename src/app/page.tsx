@@ -72,7 +72,7 @@ export default function SplashPage() {
 
   const handleGetStarted = () => {
     const tl = gsap.timeline({
-      onComplete: () => router.push("/onboarding"),
+      onComplete: () => router.push("/auth/login"),
     });
 
     tl.to(containerRef.current, {
@@ -154,46 +154,31 @@ export default function SplashPage() {
         </h1>
 
         {/* Get Started Button Area */}
-        <div className="w-full flex items-center gap-3">
-          {/* Checkmark Circle */}
-          <div
-            ref={checkRef}
-            className="w-[52px] h-[52px] rounded-full border-2 border-[#C2E03A]/60 flex items-center justify-center flex-shrink-0 backdrop-blur-sm"
-            style={{ opacity: 0, background: "rgba(194, 224, 58, 0.08)" }}
-          >
-            <Check className="w-5 h-5 text-[#C2E03A]" strokeWidth={2.5} />
-          </div>
-
-          {/* Get Started Button */}
+        <div className="w-full px-2">
           <button
             ref={buttonRef}
             onClick={handleGetStarted}
-            className="flex-1 h-[52px] rounded-full flex items-center justify-center relative overflow-hidden group cursor-pointer transition-all duration-300"
+            className="w-full h-[58px] rounded-[30px] flex items-center px-1.5 relative cursor-pointer transition-all duration-300"
             style={{
               opacity: 0,
-              background:
-                "linear-gradient(135deg, rgba(194, 224, 58, 0.15) 0%, rgba(194, 224, 58, 0.08) 100%)",
-              border: "1.5px solid rgba(194, 224, 58, 0.5)",
+              background: "linear-gradient(90deg, #3d4218 0%, #2c3010 100%)",
+              border: "1.5px solid #C2E03A",
             }}
           >
-            {/* Shimmer Effect */}
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent 0%, rgba(194, 224, 58, 0.1) 50%, transparent 100%)",
-                backgroundSize: "200% 100%",
-                animation: "shimmer 2s ease-in-out infinite",
-              }}
-            />
+            {/* White Circle with Checkmark */}
+            <div className="w-[46px] h-[46px] rounded-full bg-white flex items-center justify-center flex-shrink-0 z-10">
+              <Check className="w-6 h-6 text-[#4a4a4a]" strokeWidth={1.5} />
+            </div>
 
-            <span className="text-[#C2E03A] font-semibold text-[15px] tracking-wide relative z-10">
+            {/* Button Text */}
+            <span className="flex-1 text-center text-[#e5e5e5] font-medium text-[15px] -ml-2 z-10 tracking-wide">
               Get Started
             </span>
 
-            {/* Arrow Icon */}
-            <div className="absolute right-4 w-8 h-8 rounded-full bg-[#C2E03A]/10 flex items-center justify-center group-hover:bg-[#C2E03A]/20 transition-all duration-300">
-              <ChevronRight className="w-4 h-4 text-[#C2E03A] group-hover:translate-x-0.5 transition-transform duration-300" />
+            {/* Double Arrow Right */}
+            <div className="flex items-center text-[#8a8a8a] pr-4 z-10">
+              <ChevronRight className="w-4 h-4 -mr-2" strokeWidth={2} />
+              <ChevronRight className="w-4 h-4" strokeWidth={2} />
             </div>
           </button>
         </div>
