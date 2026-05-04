@@ -123,7 +123,7 @@ export default function ProfilePage() {
           </button>
 
           <button 
-            onClick={() => router.push('/onboarding/goal')} // Placeholder for next screen
+            onClick={() => router.push('/onboarding/activity')}
             className="h-[52px] pl-8 pr-6 bg-[#C2E03A] text-black font-semibold text-[17px] rounded-full flex items-center justify-center gap-1 active:scale-[0.96] transition-transform shadow-[0_0_15px_rgba(194,224,58,0.2)]"
           >
             Next
